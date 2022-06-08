@@ -13,34 +13,46 @@
 
 <body>
 
-    <div class="video-conteiner">
+    <!-- video -->
+    <div id="Home" class="video-conteiner">
         <video class="background-video" loop="" autoplay="" muted="" playsinline="" preload="auto">
             <source src="/img/Video para inmuebles._Trim.mp4" type="video/mp4">
         </video>
+        <div class="d-flex tituloMain">
+            <h1 class="tituloMainH1">Vuelve a enamorarte de tu hogar</h1>
+            <p>Impulsar para crecer. Crecer para evolucionar. Organizaciones, marcas y personas sumando
+                valor unas a otras.</p>
+        </div>
     </div>
 
+    <!-- header -->
     <header class="header">
+
+        <!-- navbar -->
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
+                <!-- logo -->
                 <a class="site-logo navbar-brand ms-5" href="./index.html">
                     <h1><span style="font-weight: 700; color: blue;">App</span>raisal<span class="logo-span">Pro</span>
                     </h1>
                 </a>
+                <!-- btton hamburger -->
                 <button class="navbar-toggler bg-light btn-hamburger" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+                <!-- menu con el cual se podrá desplazar por el sitio -->
                 <div class="collapse navbar-collapse text-end" id="navbarSupportedContent">
                     <ul class="nav__list navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item pe-5">
-                            <a class="nav__link nav-link active" aria-current="page" href="index.html">Home</a>
+                            <a class="nav__link nav-link active" aria-current="page" href="#Home">Home</a>
                         </li>
                         <li class="nav-item pe-5">
-                            <a class="nav__link nav-link" href="">Covid</a>
+                            <a class="nav__link nav-link" href="#Bienvenido">Bienvenido</a>
                         </li>
                         <li class="nav-item pe-5">
-                            <a class="nav__link nav-link" href="">Top + Visitados</a>
+                            <a class="nav__link nav-link" href="#Servicios">Nuestros Servicios</a>
                         </li>
                         <li class="nav-item pe-5">
                             <a class="nav__link nav-link" href="">Sobre nosotros</a>
@@ -51,30 +63,49 @@
         </nav>
     </header>
 
-    <main class="d-flex tituloMain">
-        <div>
-            <h1 class="tituloMainH1">Vuelve a enamorarte de tu hogar</h1>
-            <p>Impulsar para crecer. Crecer para evolucionar. Organizaciones, marcas y personas sumando
-                valor unas a otras.</p>
-        </div>
-
+    <!-- texto sobre el video -->
+    <main>
 
     </main>
+
+    <!-- seccion que es parte del home(primera seccion) -->
 
     <section class="container-fluid px-0 d-flex">
         <div class="imgSection">
             <img src="/img/austin-distel-wawEfYdpkag-unsplash.jpg" alt="">
-            <div>
-                <h2>Conocé nuestras Oficinas exclusivas de Buenos Aires</h2>
-                <button class="BUTTON_CVO">Oficinas</button>
+            <!-- el boton tendrá un desplegable sobre direcciones de oficinas -->
+            <div class="d-flex flex-column">
+                <h2>Conocé nuestras Oficinas exclusivas de Buenos Aires
+                    <button class="BUTTON_CVO">Oficinas</button>
+                </h2>
+
             </div>
         </div>
     </section>
 
-    <!-- Segunda seccion -->
+
+
+    <!-- informacion sobre el sitio -->
+
+    <section class="container mt-5">
+        <div class="text-center centrado2daSection">
+            <h1 id="Bienvenido" class="text-uppercase">Bienvenido a <span class="text-capitalize"
+                    style="font-weight: 700; color: blue;">App</span><span class="text-lowercase">raisal</span><span
+                    class="logo-span text-capitalize">Pro</span></h1>
+            <p> En nuestra app nuestros clientes prodrán realizar la reserva de su hogar extraordinarios tan deseado
+                supervisados
+                por nuestros
+                corredores y martilleros matriculados, especializados en la compra y venta de propiedades premium, y que
+                podrán contactarlos dejansu su mail y/o número de teléfono, o esperar a ser contactado.</p>
+            <p> Y para nuestros corredores y martilleros, AppraisalPro les permitirá realizar las tazaciones de los
+                hogares, una vez tenga los permisos, además de contactar con los clientes</p>
+        </div>
+    </section>
+
+    <!-- Segunda seccion carousel-->
 
     <section>
-        <div class="container-fluid my-5 px-0">
+        <div class="container-fluid px-0">
             <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
                 <div class="carousel-indicators">
                     <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
@@ -146,37 +177,92 @@
         </div>
     </section>
 
-    <section class="container">
-        <div class="text-center centrado2daSection">
-            <h1>Bienvenido a Appraisal<span class="logo-span">Pro</span></h1>
-            <p> Aquí nuestros clientes prodrán realizar la reserva de su hogar extraordinarios tan deseado supervisados
-                por nuestros
-                corredores y martilleros matriculados, especializados en la compra y venta de propiedades premium, y que
-                podrán contactarlos dejansu su mail y/o número de teléfono, o esperar a ser contactado.</p>
-            <p> Y para nuestros corredores y martilleros, AppraisalPro les permitirá realizar las tazaciones de los
-                hogares, una vez tenga los permisos, además de contactar con los clientes</p>
+    <hr class="container my-5">
+
+    <!-- seccion de los servicios -->
+
+    <section id="Servicios" class="container">
+        <div class="row g-5">
+            <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 text-center">
+                <h2 class="pb-3 fs-1 text-uppercase">Nuestros servicios</h2>
+                <div class="imgServicioGarantia">
+                    <img src="/img/contrato-servicio-garantia.jpg" alt="">
+                    <h3 class="fw-bold">Garantía de alquiler</h3>
+                </div>
+            </div>
+            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-12 col-sm-12 text-center rounded-pill sombraServicios">
+                <h3>Acompañamiento de visitas</h3>
+            </div>
+            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-12 col-sm-12 text-center rounded-pill sombraServicios">
+                <h3>Asesoramiento sobre condiciones en la compraventa o alquiler</h3>
+            </div>
+            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-12 col-sm-12 text-center rounded-pill sombraServicios">
+                <h3>Asesoramiento legal</h3>
+            </div>
+            <div class="col-xxl-6 col-xl-6 col-lg-4 col-md-12 col-sm-12 text-center rounded-pill sombraServicios">
+                <h3>Gestión de documentos</h3>
+            </div>
+            <div class="col-xxl-6 col-xl-6 col-lg-4 col-md-12 col-sm-12 text-center rounded-pill sombraServicios">
+                <h3>Analizar el mercado inmobiliario</h3>
+            </div>
+            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-12 col-sm-12 text-center rounded-pill sombraServicios">
+                <h3>Inspeccionar las viviendas</h3>
+            </div>
+            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-12 col-sm-12 text-center rounded-pill sombraServicios">
+                <h3>Negociar condiciones de hipotecas con las entidades bancarias</h3>
+            </div>
+            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-12 col-sm-12 text-center rounded-pill sombraServicios">
+                <h3>Gestiones de publicidad</h3>
+            </div>
         </div>
     </section>
 
-    <section class="container">
-        <p>asdads</p>
-        <p>asdads</p>
-        <p>asdads</p>
-        <p>asdads</p>
-        <p>asdads</p>
-        <p>asdads</p>
-        <p>asdads</p>
-        <p>asdads</p>
-        <p>asdads</p>
-        <p>asdads</p>
-        <p>asdads</p>
-        <p>asdads</p>
-        <p>asdads</p>
-        <p>asdads</p>
-        <p>asdads</p>
-    </section>
 
+    <!-- Site footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-xxl-9 col-xl-9 col-lg-9 col-sm-12 col-md-6">
+                    <h6>About</h6>
+                    <p class="text-justify">Scanfcode.com <i>CODE WANTS TO BE SIMPLE </i> is an initiative to help the
+                        upcoming programmers with the code. Scanfcode focuses on providing the most efficient code or
+                        snippets as the code wants to be simple. We will help programmers build up concepts in different
+                        programming languages that include C, C++, Java, HTML, CSS, Bootstrap, JavaScript, PHP, Android,
+                        SQL and Algorithm.</p>
+                </div>
 
+                <div class="col-xxl-3 col-xl-3 col-lg-3 col-xs-6 col-md-3">
+                    <h6>Quick Links</h6>
+                    <ul class="footer-links d-flex text-end flex-column">
+                        <li><a href="http://scanfcode.com/about/">About Us</a></li>
+                        <li><a href="http://scanfcode.com/contact/">Contact Us</a></li>
+                        <li><a href="http://scanfcode.com/contribute-at-scanfcode/">Contribute</a></li>
+                        <li><a href="http://scanfcode.com/privacy-policy/">Privacy Policy</a></li>
+                        <li><a href="http://scanfcode.com/sitemap/">Sitemap</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-sm-6 col-xs-12">
+                    <p class="copyright-text">Copyright &copy; 2017 All Rights Reserved by
+                        <a href="#">Scanfcode</a>.
+                    </p>
+                </div>
+
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <ul class="social-icons">
+                        <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+                        <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <script src="index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
