@@ -1,0 +1,26 @@
+[{
+    "id": "1",
+    "direccion": "Bv. José Batlle y Ordóñez esquina,Sarandi del Yi,Uruguay",
+    "telefono": "+598-97882920" 
+},
+{
+    "id": "2",
+    "direccion": "1851 Camino Paso de la Arena,Mercedes,Uruguay",
+    "telefono": "+598-61467660" 
+},
+{
+    "id": "3",
+    "direccion": "Winston Churchill 1434,San Ramon,Uruguay",
+    "telefono": "+598-41970674" 
+},
+{
+    "id": "4",
+    "direccion": "1851 Camino Paso de la Arena,Paso de los Toros,Uruguay",
+    "telefono": "+598-72773083" 
+},
+{
+    "id": "5",
+    "direccion": "Cno. De La Chimenea 6466,San Ramon,Uruguay",
+    "telefono": "+598-41779663" 
+}
+]
