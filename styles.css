@@ -3,6 +3,7 @@ body {
   scroll-behavior: smooth;
   margin: 0;
   font-family: "Courier New", Courier, monospace;
+  background-color: #e6e6e6;
 }
 
 #Bienvenido {
@@ -11,7 +12,7 @@ body {
 }
 
 #Servicios {
-  scroll-margin-top: 195px;
+  scroll-margin-top: 100px;
   scroll-behavior: smooth;
 }
 
@@ -134,11 +135,11 @@ body {
 }
 
 .colorFondo1Section {
-  background: linear-gradient(90deg, #020024 0%, #303039 44%, rgba(0, 0, 0, 0.311362) 100%);
+  background: radial-gradient(circle, rgba(48, 48, 57, 0.0984769) 0%, rgba(0, 0, 36, 0.891194) 59%);
 }
 
 .colorFondoSecCarousel {
-  background: linear-gradient(90deg, rgba(0, 0, 0, 0.311362) 0%, #303039 44%, #020024 100%);
+  background: radial-gradient(circle, rgba(48, 48, 57, 0.0984769) 0%, rgba(0, 0, 36, 0.891194) 59%);
 }
 
 .imgSection {
@@ -272,15 +273,15 @@ body {
   transform: translate(-50%, -50%);
 }
 
-.sombraServicios {
+.sombraServicios h3 {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.sombraServicios:hover {
+  background-color: white;
   box-shadow: 10px 10px 10px 5px rgba(0, 0, 0, 0.2);
-  transition: 200ms;
+  border-radius: 10px;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .site-footer {

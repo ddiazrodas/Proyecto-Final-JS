@@ -42,6 +42,8 @@ oficinasJson();
 
 const mostrasOficinas = (arreglo) => {
 
+  listaDeOficinas.innerHTML=`` //vacia la lista de oficinas para que no se duplique 
+
   for (const off of arreglo) {
     const listaDeOficinas = document.getElementById("listaDeOficinas");
     listaDeOficinas.innerHTML += `<li class="listaOficinas" >Dirección: ${off.direccion} Telefono: ${off.telefono}</li>
@@ -71,6 +73,7 @@ const crearNuevaConsulta = () => {
     email: emailCliente.value,
     phone: phone.value,
     actividad: actividad.value,
+    texto: document.getElementById("textoConsultas").value,
     id: idConsulta,
   };
 
