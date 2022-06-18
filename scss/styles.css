@@ -1,0 +1,484 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap");
+body {
+  scroll-behavior: smooth;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #e6e6e6;
+}
+
+#Bienvenido {
+  scroll-margin-top: 195px;
+  scroll-behavior: smooth;
+}
+
+#Servicios {
+  scroll-margin-top: 100px;
+  scroll-behavior: smooth;
+}
+
+#Contacto {
+  scroll-behavior: smooth;
+}
+
+.logo-span {
+  font-family: "Caveat", cursive;
+  font-weight: 700;
+}
+
+.video-conteiner {
+  position: relative;
+  z-index: -1;
+}
+
+.background-video {
+  z-index: -100;
+  width: 100%;
+  height: 600px;
+  opacity: 1;
+  filter: contrast(35%);
+  object-fit: cover;
+}
+
+.tituloMain {
+  width: 50%;
+  top: 50%;
+  left: 10%;
+  transform: translate(-10%, -10%);
+  position: absolute;
+  z-index: 1;
+  flex-direction: column;
+}
+
+.tituloMain h1 {
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 400;
+  line-height: 50px;
+}
+
+.tituloMain p {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 25px;
+}
+
+.site-logo {
+  font-weight: 900;
+  font-size: 2.3rem;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.header {
+  --text: #f4f4f4;
+  --text-inverse: #333;
+  --background: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  padding: 2em 3em;
+  transition: background 250ms ease-in;
+  background: var(--background);
+  color: var(--text);
+}
+
+.btn-hamburger {
+  filter: drop-shadow(2px 4px 6px black);
+}
+
+.nav__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.nav__link {
+  --spacing: 1em;
+  text-decoration: none;
+  color: inherit !important;
+  display: inline-block;
+  padding: calc(var(--spacing) / 2) var(--spacing);
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.nav__link:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: var(--spacing);
+  right: var(--spacing);
+  height: 2px;
+  background: currentColor;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  transition: -webkit-transform 150ms ease-in-out;
+  transition: transform 150ms ease-in-out;
+  transition: transform 150ms ease-in-out, -webkit-transform 150ms ease-in-out;
+}
+
+.nav__link:hover::after {
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+  color: red;
+}
+
+.nav-scrolled {
+  --text: #333;
+  --text-inverse: #f4f4f4;
+  --background: #f4f4f4;
+  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+}
+
+.colorFondo1Section {
+  background: radial-gradient(circle, rgba(48, 48, 57, 0.0984769) 0%, rgba(0, 0, 36, 0.891194) 59%);
+}
+
+.colorFondoSecCarousel {
+  background: radial-gradient(circle, rgba(48, 48, 57, 0.0984769) 0%, rgba(0, 0, 36, 0.891194) 59%);
+}
+
+.imgSection {
+  margin-top: 2rem;
+  width: 100%;
+  height: 300px;
+  position: relative;
+}
+
+.imgSection img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.clasePrueba {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+}
+
+.clasePrueba2 {
+  display: grid;
+  text-align: center;
+  height: 100%;
+  place-items: center;
+}
+
+.modal-backdrop {
+  position: unset !important;
+}
+
+.clasePrueba3 {
+  overflow: visible;
+}
+
+.BUTTON_CVO {
+  border-radius: 100px;
+  color: #ffffff;
+  font-size: 25px;
+  font-weight: 700;
+  padding: 10px;
+  background: #470196;
+  -webkit-box-shadow: 1px 1px 20px 0 #000000;
+  -moz-box-shadow: 1px 1px 20px 0 #000000;
+  box-shadow: 1px 1px 20px 0 #000000;
+  text-shadow: 1px 1px 20px #000000;
+  border: solid #000000 1px;
+  text-decoration: none;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.BUTTON_CVO:hover {
+  border: solid #ffffff 1px;
+  background: #ffffff;
+  border-radius: 100px;
+  text-decoration: none;
+  color: black;
+}
+
+.listaOficinas {
+  list-style: none;
+  text-align: start;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.25rem;
+}
+
+.resaltar {
+  font-weight: 900;
+  text-decoration: underline;
+  color: #2600a1;
+}
+
+.centrado2daSection h1 {
+  font-size: 3.2rem;
+  padding-bottom: 3rem;
+}
+
+.centrado2daSection p {
+  font-size: 1.3rem;
+  line-height: 3rem;
+}
+
+.carouselIndex {
+  width: 100%;
+  height: 370px;
+  text-align: center;
+  justify-content: center;
+}
+
+.imgCarousel {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.titulosCarousel h5 {
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 600;
+  filter: drop-shadow(0px 0px 2px black);
+}
+
+.titulosCarousel p {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 600;
+  filter: drop-shadow(0px 0px 2px black);
+}
+
+.imgServicioGarantia {
+  position: relative;
+}
+
+.imgServicioGarantia img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: 500ms;
+}
+
+.imgServicioGarantia img:hover {
+  transform: scale(1.01);
+  filter: drop-shadow(0 0 0.5rem black);
+  filter: blur(0.25rem) drop-shadow(0 0 0.5rem black);
+  transition: 500ms;
+}
+
+.imgServicioGarantia h3 {
+  position: absolute;
+  color: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.sombraServicios h3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  box-shadow: 10px 10px 10px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 100px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.animate__animated.animate__fadeIn {
+  --animate-duration: 3.5s;
+}
+
+.site-footer {
+  background-color: #2d2b34;
+  padding: 45px 0 20px;
+  font-size: 15px;
+  line-height: 24px;
+  color: #737373;
+}
+
+.site-footer label {
+  color: #fff;
+  font-size: 16px;
+}
+
+.site-footer hr {
+  border-top-color: #bbb;
+  opacity: 0.5;
+}
+
+.site-footer h6 {
+  color: #fff;
+  font-size: 16px;
+  text-transform: uppercase;
+  margin-top: 5px;
+  letter-spacing: 2px;
+}
+
+.site-footer a {
+  color: #737373;
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  color: #3366cc;
+  text-decoration: none;
+}
+
+.serviciosFooter {
+  text-decoration: none;
+  list-style: none;
+}
+
+.site-footer hr.small {
+  margin: 20px 0;
+}
+
+.footer-links {
+  padding-left: 0;
+  list-style: none;
+}
+
+.footer-links li {
+  display: block;
+}
+
+.footer-links a {
+  color: #737373;
+}
+
+.footer-links a:active,
+.footer-links a:focus,
+.footer-links a:hover {
+  color: #3366cc;
+  text-decoration: none;
+}
+
+.footer-links.inline li {
+  display: inline-block;
+}
+
+.site-footer .social-icons {
+  text-align: right;
+}
+
+.site-footer .social-icons a {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  margin-left: 6px;
+  margin-right: 0;
+  border-radius: 100%;
+  background-color: #33353d;
+}
+
+.copyright-text {
+  margin: 0;
+}
+
+.social-icons {
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.social-icons li {
+  display: inline-block;
+  margin-bottom: 4px;
+}
+
+.social-icons li.title {
+  margin-right: 15px;
+  text-transform: uppercase;
+  color: #96a2b2;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.social-icons a {
+  background-color: #eceeef;
+  color: #818a91;
+  font-size: 16px;
+  display: inline-block;
+  line-height: 44px;
+  width: 44px;
+  height: 44px;
+  text-align: center;
+  margin-right: 8px;
+  border-radius: 100%;
+  -webkit-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+.social-icons a:active,
+.social-icons a:focus,
+.social-icons a:hover {
+  color: #fff;
+  background-color: #29aafe;
+}
+
+.social-icons.size-sm a {
+  line-height: 34px;
+  height: 34px;
+  width: 34px;
+  font-size: 14px;
+}
+
+.social-icons a.facebook:hover {
+  background-color: #3b5998;
+}
+
+.social-icons a.twitter:hover {
+  background-color: #00aced;
+}
+
+.social-icons a.linkedin:hover {
+  background-color: #007bb6;
+}
+
+.social-icons a.dribbble:hover {
+  background-color: #ea4c89;
+}
+
+@media (max-width: 991px) {
+  .site-footer [class^="col-"] {
+    margin-bottom: 30px;
+  }
+}
+
+@media (min-width: 0px) and (max-width: 767.98px) {
+  .background-video {
+    display: none;
+  }
+  .tituloMain {
+    display: none;
+  }
+  .nav-scrolled {
+    position: unset;
+  }
+  .site-footer {
+    padding-bottom: 0;
+  }
+  .site-footer .copyright-text,
+  .site-footer .social-icons {
+    text-align: center;
+  }
+  .social-icons li.title {
+    display: block;
+    margin-right: 0;
+    font-weight: 600;
+  }
+}
