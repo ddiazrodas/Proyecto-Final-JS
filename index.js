@@ -5,6 +5,11 @@ let emailCliente = document.getElementById("emailCliente");
 let btnFormularioContacto = document.getElementById("btnPrincipal");
 let oficinas;
 let inmuebles;
+let propiedadInmueble = document.getElementById("propiedades-inmuebles");
+let agregarCarrito = document.getElementById("agregarCarrito");
+let addressPropiedad1 = document.getElementById("addressPropiedad1");
+let precioPropiedad = document.getElementById("precioPropiedad1")
+
 
 // navbar
 const sectionOneOptions = {
@@ -54,42 +59,123 @@ const obtenerImg = async (id) => {
   let data = await response.json();
   const producto = data;
 
-  console.log(producto.pictures[0].url)
+  return producto.pictures[0].url;
+};
 
-  // return producto.pictures[0].url;
+let reservas = [];
+
+class constructorInmueble {
+  constructor(imagen, titulo, direccion, ciudad, precio, id){
+
+    this.imagen = imagen;
+    this.titulo = titulo;
+    this.direccion = direccion;
+    this.ciudad = ciudad;
+    this.precio = precio;
+    this.id = id;
+  }
 }
+
+let arrayInmuebles = [];
+
 
 const mercadoLibreInmuebles = async () => {
   let respuesta = await fetch(
-    "https://api.mercadolibre.com/sites/MLA/search?category=MLA1459&limit=12&OPERATION=242075"
+    "https://api.mercadolibre.com/sites/MLA/search?category=MLA1459&limit=8&OPERATION=242075&PROPERTY_TYPE=242062,242060&state=TUxBUENBUGw3M2E1"
   );
   let data2 = await respuesta.json();
   inmuebles = data2.results;
 
-  console.log(inmuebles);
+  let num = 1;
 
-  inmuebles.forEach((i) => {
-    let cartas = document.createElement("div");
-    cartas.innerHTML = `
-    <div class="row">
-      <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-4 col-sm-6">
-        <div class="card" style="width: 18rem">
-        <img src="${obtenerImg(i.id)}" decoding="async" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">${i.title}</h5>
-            <p class="card-text">${i.location.addres_line} - ${i.location.city.name}</p>
-            <p class="card-text">USD ${i.price}</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
-       </div>
-    </div>
-  </div>`;
+  for (const i of inmuebles) {
 
-    document.getElementById("propiedades-inmuebles").append(cartas);
-  });
+    // propiedadInmueble.innerHTML += `
+    //   <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 col-sm-12">
+    //     <div class="card my-3" style="width: 18rem;min-height: 500px">
+    //       <img src="${await obtenerImg(i.id)}" class="card-img-top" alt="..." style="height: 250px">
+    //       <div class="card-body">
+    //         <h5 id="descripcionPropiedad${num}" class="card-title">${i.title}</h5>
+    //         <p id="addressPropiedad${num}" class="card-text">${i.location.address_line} - ${i.location.city.name}</p>
+    //         <p id="precioPropiedad${num}" class="card-text">USD ${i.price}</p>
+    //         <a id="agregarCarrito${num}" href="#" class="btn btn-primary">Reservar</a>
+    //       </div>
+    //    </div>
+    //   </div>`;
+
+      let nuevoInmueble = new constructorInmueble(obtenerImg(i.id), i.title, i.location.address_line, i.location.city.name, i.price, num);
+    num++;
+    arrayInmuebles.push(nuevoInmueble);
+  }
+
+  mostrarCartas();
 };
 
+mercadoLibreInmuebles().then();
 
+const mostrarCartas = async () => {
+  
+
+
+  for (const inmueble of arrayInmuebles) {
+
+    propiedadInmueble.innerHTML += `
+    <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 col-sm-12">
+      <div class="card my-3" style="width: 18rem;min-height: 500px">
+        <img src="${await inmueble.imagen}" class="card-img-top" alt="..." style="height: 250px">
+        <div class="card-body">
+          <h5 id="descripcionPropiedad" class="card-title">${inmueble.titulo}</h5>
+          <p id="addressPropiedad" class="card-text">${inmueble.direccion} - ${inmueble.ciudad}</p>
+          <p id="precioPropiedad" class="card-text">USD ${inmueble.precio}</p>
+          <a id="agregarCarrito" onclick=agregarReserva(${inmueble.id}) href="#" class="btn btn-primary">Reservar</a>
+        </div>
+     </div>
+    </div>`;
+}
+}
+
+const agregarReserva = async () => {
+  	
+const { value: email } = await Swal.fire({
+  title: 'Por favor, ingrese su email',
+  input: 'email',
+  // inputLabel: 'Your email address',
+  inputPlaceholder: 'Enter your email address',
+  showCancelButton: true
+
+})
+
+if (email) {
+  Swal.fire(`Email ingresado: ${email}`)
+}
+}
+
+//Agregar al carrito
+
+// let reservas = [];
+
+// agregarCarrito.addEventListener("click", (e) =>{
+
+//   agregarAlCarrito()
+//   // guardarCarritoLocalStorage("carritoLocalStorage", JSON.stringify(reservas));
+
+// })
+
+// for (let index = 0; index < 8; index++) {
+  
+  
+// }
+
+
+// const agregarAlCarrito = (producto) => {
+//   let reserva = {
+//  
+//     direccion: document.getElementById("addressPropiedad").value,
+//     precio: document.getElementById("precioPropiedad").value,
+//   };
+
+//   reservas.push(reserva);
+// };
 
 // Formulario de Contacto
 
