@@ -54,6 +54,9 @@
                             <a class="nav__link nav-link" href="#Bienvenido">Bienvenido</a>
                         </li>
                         <li class="nav-item pe-5">
+                            <a class="nav__link nav-link" href="#Comprar">Comprar</a>
+                        </li>
+                        <li class="nav-item pe-5">
                             <a class="nav__link nav-link" href="#Servicios">Servicios</a>
                         </li>
                         <li class="nav-item pe-5">
@@ -67,7 +70,8 @@
 
     <!-- Cartas de inmuebles -->
 
-    <main class="container">
+    <main id="Comprar" class="container py-5">
+        <h1 class="wow animate__animated animate__slideInDown display-4 text-center text-bg-light py-3 text-secondary rounded">INMUEBLES EN VENTA</h1>
 
         <div class="row" id="propiedades-inmuebles">
 
@@ -77,7 +81,7 @@
 
     <!-- seccion que es parte del home(primera seccion) -->
 
-    <section class="colorFondo1Section container-fluid px-0 pb-5 d-flex">
+    <section class="colorFondoSectionOficinas container-fluid px-0 pt-3 pb-5 d-flex">
         <div class="imgSection">
             <img src="./img/austin-distel-wawEfYdpkag-unsplash.jpg" alt="">
             <div class="d-flex flex-column clasePrueba">
@@ -110,13 +114,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- el boton tendrá un desplegable sobre direcciones de oficinas -->
-
-            <div>
-
-
-            </div>
         </div>
     </section>
 
@@ -129,11 +126,9 @@
             <h1 id="Bienvenido" class="text-uppercase">Bienvenido a <span class="text-capitalize"
                     style="font-weight: 700; color: blue;">App</span><span class="text-lowercase">raisal</span><span
                     class="logo-span text-capitalize">Pro</span></h1>
-            <p> En nuestra app nuestros clientes prodrán realizar la reserva de su hogar extraordinarios tan deseado
-                supervisados
-                por nuestros
-                corredores y martilleros matriculados, especializados en la compra y venta de propiedades premium, y que
-                podrán contactarlos dejansu su mail y/o número de teléfono, o esperar a ser contactado.</p>
+            <p> En nuestra app los clientes prodrán realizar la reserva de su hogar tan deseado. Una vez hecha la reserva
+                serán contactos, dejando su mail y/o número de teléfono, por nuestros corredores y martilleros matriculados, especializados en la compra y venta 
+                de propiedades premium.</p>
             <p> Y para nuestros corredores y martilleros, AppraisalPro les permitirá realizar las tazaciones de los
                 hogares, una vez tenga los permisos, además de contactar con los clientes</p>
         </div>
@@ -275,6 +270,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-6">
+                    <h6 class="pb-3">Contacto</h6>
                     <form id="formulario" action="" class="container">
                         <div class="row mb-3">
                             <div class="col">
@@ -302,7 +298,6 @@
                             <select id="actividad" class="form-select" aria-label="Default select example" required>
                                 <option selected disabled>Elija la Actividad</option>
                                 <option value="Alquiler">Alquiler</option>
-                                <option value="Compra">Compra</option>
                                 <option value="Venta">Venta</option>
                             </select>
                         </div>
@@ -333,10 +328,9 @@
                     <h6>Navegación</h6>
                     <ul class="footer-links">
                         <li><a href="#Home">Home</a></li>
+                        <li><a href="#Comprar">Compra</a></li>
                         <li><a href="#Bienvenido">Bienvenido</a></li>
                         <li><a href="#Servicios">Nuestros servicios</a></li>
-                        <li><a href="">Privacy Policy</a></li>
-                        <li><a href="">Sitemap</a></li>
                     </ul>
                 </div>
             </div>
