@@ -10,7 +10,11 @@ body {
   // font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   // font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   // font-family: Verdana, Geneva, Tahoma, sans-serif;
-  background-color: rgb(230, 230, 230);
+  background-color: rgb(183, 183, 183);
+}
+
+#Home {
+  scroll-behavior: smooth;
 }
 
 #Bienvenido {
@@ -95,10 +99,6 @@ body {
   color: var(--text);
 }
 
-.carrito {
-  font-size: 40px;
-}
-
 .btn-hamburger {
   filter: drop-shadow(2px 4px 6px black);
 }
@@ -166,6 +166,12 @@ body {
     rgba(0, 0, 36, 0.8911939775910365) 59%
   );
 }
+
+.cartasReservas:hover {
+  transition: 400ms;
+  box-shadow: 1px 1px 25px 1px rgba(0, 0, 0, 0.2);
+}
+
 
 .imgSection {
   margin-top: 2rem;
@@ -322,10 +328,6 @@ body {
     margin-bottom: 15px;
   }
 
-  // &:hover {
-
-  //   transition: 200ms;
-  // }
 }
 
 .animate__animated.animate__fadeIn {

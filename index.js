@@ -62,8 +62,6 @@ const obtenerImg = async (id) => {
   return producto.pictures[0].url;
 };
 
-let reservas = [];
-
 class constructorInmueble {
   constructor(imagen, titulo, direccion, ciudad, precio, id){
 
@@ -115,67 +113,131 @@ mercadoLibreInmuebles().then();
 
 const mostrarCartas = async () => {
   
+  arrayInmuebles.forEach((inmueble, index) => {
 
+  })
 
-  for (const inmueble of arrayInmuebles) {
+  for (const [index,inmueble] of arrayInmuebles.entries()) {
 
     propiedadInmueble.innerHTML += `
-    <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 col-sm-12">
-      <div class="card my-3" style="width: 18rem;min-height: 500px">
+    <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center">
+      <div class="card my-3 cartasReservas text-center" style="width: 18rem;min-height: 500px">
         <img src="${await inmueble.imagen}" class="card-img-top" alt="..." style="height: 250px">
         <div class="card-body">
           <h5 id="descripcionPropiedad" class="card-title">${inmueble.titulo}</h5>
           <p id="addressPropiedad" class="card-text">${inmueble.direccion} - ${inmueble.ciudad}</p>
           <p id="precioPropiedad" class="card-text">USD ${inmueble.precio}</p>
-          <a id="agregarCarrito" onclick=agregarReserva(${inmueble.id}) href="#" class="btn btn-primary">Reservar</a>
+          <!-- Button trigger modal -->
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal${index}">
+                RESERVAR
+              </button>
+
+              <!-- Modal -->
+              <div class="modal fade" id="exampleModal${index}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Ingrese sus datos para ser contactado por nuestros profesionales</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <form id="formReset${index}">
+                        <div class="row mb-3">
+                          <div class="col">
+                            <input id="nombreReserva${index}" type="text" class="form-control" placeholder="Nombre" aria-label="Nombre" required>
+                          </div>
+                          <div class="col">
+                            <input id="apellidoReserva${index}" type="text" class="form-control" placeholder="Apellido" aria-label="Apellido" required>
+                          </div>
+                        </div>
+                        <div class="mb-3">
+                          <input id="mailReserva${index}" type="email" class="form-control" id="exampleFormControlInput1" placeholder="nombre@ejemplo.com" required>
+                        </div>
+                        <div class="mb-3">
+                          <input id="phoneReserva${index}" type="tel" class="form-control" placeholder="Teléfono" required>
+                          <small>Ingrese un número completo con código de área. Ej: 112345678 (CABA)</small>
+                        </div>
+                        <div class="mb-3">
+                          <textarea id="textoReserva${index}" class="form-control" rows="3" placeholder="Comentarios"></textarea>
+                        </div>
+                        
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                          <button type="reset" class="btn btn-primary" onclick="agregarReserva(${index})">Confirmar</button>
+                        </div>
+                      </form>
+                  </div>
+                </div>
+              </div>
         </div>
      </div>
     </div>`;
 }
 }
 
-const agregarReserva = async () => {
-  	
-const { value: email } = await Swal.fire({
-  title: 'Por favor, ingrese su email',
-  input: 'email',
-  // inputLabel: 'Your email address',
-  inputPlaceholder: 'Enter your email address',
-  showCancelButton: true
 
+let reservas = [];
+let idReserva = 1;
+
+const obtenerReservaLocalStorage = () => {
+  if (localStorage.getItem("reservas")) {
+    reservas = JSON.parse(localStorage.getItem("reservas"));
+
+    reservas.forEach(() => idReserva++); //aumenta el contador de let idEmpleado
+  }
+};
+
+obtenerReservaLocalStorage();
+
+
+const crearReserva = (inmueble, index) => {
+
+  const { direccion, precio } = inmueble;
+
+  let reserva = {
+    id: idReserva,
+    direccion: direccion,
+    precio: precio,
+    nombre: document.getElementById("nombreReserva"+ index).value,
+    apellido: document.getElementById("apellidoReserva"+ index).value,
+    numero: document.getElementById("phoneReserva"+ index).value,
+    comments: document.getElementById("textoReserva"+ index).value
+  }
+  idReserva++;
+
+  reservas.push(reserva);
+
+  document.getElementById("formReset"+ index).reset()
+}
+
+
+guardarReservaLocalStorage = (clave, valor) => {
+  localStorage.setItem(clave, valor);
+};
+
+
+const agregarReserva = async (inmueble) => {
+  
+  crearReserva(arrayInmuebles[inmueble], inmueble);
+  guardarReservaLocalStorage("reservas", JSON.stringify(reservas));
+
+const Toast = Swal.mixin({
+  toast: true,
+  position: 'bottom-end',
+  showConfirmButton: false,
+  timer: 4000,
+  timerProgressBar: true,
+  didOpen: (toast) => {
+    toast.addEventListener('mouseenter', Swal.stopTimer)
+    toast.addEventListener('mouseleave', Swal.resumeTimer)
+  }
 })
 
-if (email) {
-  Swal.fire(`Email ingresado: ${email}`)
+Toast.fire({
+  icon: 'success',
+  title: 'Datos enviados con éxito, estaremos en contacto'
+})
 }
-}
-
-//Agregar al carrito
-
-// let reservas = [];
-
-// agregarCarrito.addEventListener("click", (e) =>{
-
-//   agregarAlCarrito()
-//   // guardarCarritoLocalStorage("carritoLocalStorage", JSON.stringify(reservas));
-
-// })
-
-// for (let index = 0; index < 8; index++) {
-  
-  
-// }
-
-
-// const agregarAlCarrito = (producto) => {
-//   let reserva = {
-//  
-//     direccion: document.getElementById("addressPropiedad").value,
-//     precio: document.getElementById("precioPropiedad").value,
-//   };
-
-//   reservas.push(reserva);
-// };
 
 // Formulario de Contacto
 
@@ -184,9 +246,7 @@ let idConsulta = 1;
 
 const traerConsultasDeLS = () => {
   if (localStorage.getItem("consultas")) {
-    consultas = JSON.parse(
-      localStorage.getItem("consultas")
-    ); /*traigo el json que se cargó, 
+    consultas = JSON.parse(localStorage.getItem("consultas")); /*traigo el json que se cargó, 
     para luego por cada objeto que tengo sume +1 a idConsulta*/
 
     consultas.forEach(() => idConsulta++); //aumenta el contador de let idConsulta

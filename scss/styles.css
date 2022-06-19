@@ -3,7 +3,11 @@ body {
   scroll-behavior: smooth;
   margin: 0;
   font-family: "Poppins", sans-serif;
-  background-color: #e6e6e6;
+  background-color: #b7b7b7;
+}
+
+#Home {
+  scroll-behavior: smooth;
 }
 
 #Bienvenido {
@@ -85,10 +89,6 @@ body {
   color: var(--text);
 }
 
-.carrito {
-  font-size: 40px;
-}
-
 .btn-hamburger {
   filter: drop-shadow(2px 4px 6px black);
 }
@@ -148,6 +148,11 @@ body {
 
 .colorFondoSecCarousel {
   background: radial-gradient(circle, rgba(48, 48, 57, 0.0984769) 0%, rgba(0, 0, 36, 0.891194) 59%);
+}
+
+.cartasReservas:hover {
+  transition: 400ms;
+  box-shadow: 1px 1px 25px 1px rgba(0, 0, 0, 0.2);
 }
 
 .imgSection {
