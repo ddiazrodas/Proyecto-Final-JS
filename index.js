@@ -32,7 +32,7 @@ sectionOneOptions);
 
 sectionOneObserver.observe(sectionOne);
 
-//boton oficinas, va a ser un modal
+//BOTON DE OFICINAS CON MODAL
 
 const oficinasJson = async () => {
   let response = await fetch("./oficinas.json");
@@ -52,7 +52,7 @@ const mostrasOficinas = (arreglo) => {
   }
 };
 
-// API DE MELI
+// API DE MELI -- tuve que traer las imagenes por separado para no usar las thumbnail en formato jpg
 
 const obtenerImg = async (id) => {
   let response = await fetch(`https://api.mercadolibre.com/items/${id}`);
@@ -88,19 +88,6 @@ const mercadoLibreInmuebles = async () => {
 
   for (const i of inmuebles) {
 
-    // propiedadInmueble.innerHTML += `
-    //   <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6 col-sm-12">
-    //     <div class="card my-3" style="width: 18rem;min-height: 500px">
-    //       <img src="${await obtenerImg(i.id)}" class="card-img-top" alt="..." style="height: 250px">
-    //       <div class="card-body">
-    //         <h5 id="descripcionPropiedad${num}" class="card-title">${i.title}</h5>
-    //         <p id="addressPropiedad${num}" class="card-text">${i.location.address_line} - ${i.location.city.name}</p>
-    //         <p id="precioPropiedad${num}" class="card-text">USD ${i.price}</p>
-    //         <a id="agregarCarrito${num}" href="#" class="btn btn-primary">Reservar</a>
-    //       </div>
-    //    </div>
-    //   </div>`;
-
       let nuevoInmueble = new constructorInmueble(obtenerImg(i.id), i.title, i.location.address_line, i.location.city.name, i.price, num);
     num++;
     arrayInmuebles.push(nuevoInmueble);
@@ -110,6 +97,9 @@ const mercadoLibreInmuebles = async () => {
 };
 
 mercadoLibreInmuebles().then();
+
+
+//MUESTRO LAS CARTAS
 
 const mostrarCartas = async () => {
   
@@ -175,6 +165,7 @@ const mostrarCartas = async () => {
 }
 }
 
+//CREACION, GUARDADO, Y CONFIRMACION DE LAS RESERVAS DE LOS INMUEBLES
 
 let reservas = [];
 let idReserva = 1;
@@ -239,7 +230,7 @@ Toast.fire({
 })
 }
 
-// Formulario de Contacto
+// FORMULARIO DE CONTACTO, CREACION, GUARDADO, Y CONFIRMACION DEL ENVIO DE LA INFORMACION
 
 let consultas = [];
 let idConsulta = 1;
