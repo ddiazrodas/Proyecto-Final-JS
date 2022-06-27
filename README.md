@@ -2,7 +2,7 @@
 
 AppraisalPro es el comienzo de una app para personas interesadas en compra, alquiler, y venta de su inmueble; 
 
-y para los profesionales que se dedican a tazar los mismos, actualmente esto último aun no fue incorporado.
+y para los profesionales, mas adelante, que puedan realizar una tazacion del inmueble con esta app.
 
 La sección de compra de los inmuebles, los datos los obtuve de la API rest de Mercado Libre, haciendo uso de sus filtros:
 
